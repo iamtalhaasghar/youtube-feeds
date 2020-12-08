@@ -37,13 +37,17 @@ class YoutubeChannelBot:
         return videoList
 
 if __name__ == "__main__":
-    
-    for channel in channelsIds:
-        ytChannel = YoutubeChannelBot(channel)
-        videos = ytChannel.scrap()
-        f = open('%s.html' % ytChannel.channelName, 'w', encoding='utf-8')
-        f.write('<ol>')
-        for v in videos:
-            f.write("<li><a href='%s' target=_blank>%s</a></li>\n" % (v['href'], v['title']))
-        f.write('</ol>')
-        f.close()
+    import sys
+    if(len(sys.argv) > 1):
+        channelIds = sys.argv[1:]
+        for channel in channelIds:
+            ytChannel = YoutubeChannelBot(channel)
+            videos = ytChannel.scrap()
+            f = open('%s.html' % ytChannel.channelName, 'w', encoding='utf-8')
+            f.write('<ol>')
+            for v in videos:
+                f.write("<li><a href='%s' target=_blank>%s</a></li>\n" % (v['href'], v['title']))
+            f.write('</ol>')
+            f.close()
+    else:
+        print('Usage: python ytbot.py [channel1_id[...]]')
