@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="/static/css/table-responsive.css" media="screen" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>New Videos</th>
+          <th>Seen</th>
+          <th>Total Videos</th>
+          <th>UnSeen</th>
+          <th>Seen</th>
+          <th>all</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{tbody}}
+      </tbody>
+    </table>
+    <script type='text/javascript'>
+      $('#selectAll').click(function(e) {
+        $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+      });
+      var addSerialNumber = function() {
+        $('table tr').each(function(index) {
+          $(this).find('td:nth-child(1)').html(index);
+        });
+      };
+      addSerialNumber();
+
+    </script>
+
+
+</body>
+
+</html>

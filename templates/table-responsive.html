@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="/static/css/table-responsive.css" media="screen" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <form action='/mark-as-seen' method='POST'>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Upload Date</th>
+          <th>Length</th>
+          <th>Views</th>
+          <th>Channel</th>
+          <th>Scraped Date</th>
+          <th><input type='checkbox' id='selectAll'></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{tbody}}
+      </tbody>
+    </table>
+    <script type='text/javascript'>
+      $('#selectAll').click(function(e) {
+        $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+      });
+      var addSerialNumber = function() {
+        $('table tr').each(function(index) {
+          $(this).find('td:nth-child(1)').html(index);
+        });
+      };
+      addSerialNumber();
+
+    </script>
+    <input type='submit'>
+  </form>
+
+</body>
+
+</html>

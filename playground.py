@@ -1,4 +1,47 @@
-channelsIds = ['UC2FsNw9p7c8HDNdjRLknuiA', 'UCW_Vig4PIxCX85316CjNUvQ', 'UCfzlCWGWYyIQ0aLC5w48gBQ', 'UCpF9-qB1K1NGerf3cPQKqrw', 'UC-taJkjeamKmQLzU3lZlzvA', 'UCYEbvKwxoWzJbmmyQYx6U3A', 'UC_5dp280YD12kh0xd9LVkGA', 'UC-wyLewG9KEx7z7_XhcmVNg', 'UCfZZLVcmjOBbz7fDVB8TTWQ', 'UCNc2cFy7_fRlcD0x-ddMFlQ', 'UCOepVQ3_q5GSTVQPsWlOsiQ', 'UCL734pJgWre2lcodpLT-K0A', 'UCAPKFEmtca1ptADaSiwaieg', 'UCf4mtKKsO1EX9UPkGCER1Uw', 'UC7PiGuV-3D9WLCYrvQjYTYQ', 'UCxD2_G83hngqdBnkE8CmWlw', 'UCOQrNU42HFSzgFHefWXdtkQ', 'UCs6KfncB4OV6Vug4o_bzijg', 'UCM5QNdoIefx6eumjPk8ZTMw', 'UCYZqloPdsqvRoxjj81SHwAg', 'UCHbq_l1qnuomfJCYQTsWf_Q', 'UC8PICQUP0a_HsrA9S4IIgWw', 'UCAPByrKU5-R1emswVlyH_-g', 'UCIgSSHxf2Y1yYMN-CRzqJPw', 'UCInZht3KI1alD8OEATNJ6vw', 'UCgkKA7xEOoBQNpC5TJxPLiw', 'UCjv3215EQ2R7LE5lCdBYJuA', 'UCF8YHWaraF7By6KkTN__cdw', 'UCWIzrKzN4KY6BPU8hsk880Q', 'UCmTq5T4kQabakmrSAR0YVjg', 'UCYFKeNugU7c9Nen_0JUltsg', 'UCHyRODVjJlE45cbkjmZPF_g', 'UCEAribYzUbiAR4QMxA91Y0Q', 'UC51PrnJs1jn8t8ChdVpaW9g', 'UC4uqS_dE-4dciRbP7P2A4Pw', 'UCjZKhWK1bIbYXPoMdnqjKhw', 'UCPcP3uq3CkqL5g096iD0tKA', 'UCVD5Vh9LhLBxp3o1vRNyf_w', 'UCwaaozqVoy5FzuakAfQo3hw', 'UC38yFY20UCi2Bi_7IMkpvYQ', 'UCqB8rv9VDexaqltysPMTLYg', 'UC5kd-4D7J4zbhqjFMWJ3pgQ', 'UCoOae5nYA7VqaXzerajD0lg', 'UC4FBX0YcuI2zJngsi9-1BdA', 'UCeZPPomj3PMNQuu2PnEY4fw', 'UCl-Zrl0QhF66lu1aGXaTbfw', 'UCFsDXM40vHfbNEBt9YdayVg', 'UCn68MHKSGluDcSQbABxW4EQ', 'UCslugpmYWJiZK5rbvtcaV7Q', 'UC0B4l05O1G5-K6Iz7SDh_ug', 'UC78qBaP-lBQBCQTXli_DR-Q', 'UCIBfM9FGbnxsn19ytTgBQ4w', 'UCTcLKZZO2SKC5x-ovkrwZcw', 'UC16niRr50-MSBwiO3YDb3RA', 'UCdsOTr6SmDrxuWE7sJFrkhQ', 'UCwmZiChSryoWQCZMIQezgTg', 'UCZEPItn2Nb62Zso5eohHAAA', 'UCCj956IF62FbT7Gouszaj9w', 'UCvm8V4Dwtz0fbPGbpk7RYAg', 'UCA6QuBRyyf4J61OLD_hALJg', 'UC4KN50fal7f45fx2DqG7ttg', 'UC6o-wWU-v2ClFMwougmK7dA', 'UCcgKRB26m6M3okTSP7C_UwA', 'UCfYW5GXBXueSO5p9bxD45qg', 'UCDYT9mM3L_ByrPYMyl0MGGg', 'UCpNzXJ5jpcJojC5mHQvGA8w', 'UCeK21VZQ8i7dTSkDEqjRxPw', 'UCeWqACGRU5gT0BXeFhrixWA', 'UCWJcA8bntDLEIIuaSJuY9uA', 'UCIhGXeOeWeEPxMLbCrUvf-g', 'UCVirHiHgIgKoYcCZgl6_pfg', 'UCiWrjBhlICf_L_RK5y6Vrxw', 'UCupvZG-5ko_eiXAupbDfxWw', 'UCuyrF8uIaXqnIzui0lu5cJQ', 'UCV1yRP1YY3LeXp12VBqqeHw', 'UCwhTMYZ3GGJOPJZUVVIxhhw', 'UC8KKm6rNDm5lR7KwaPk_aQg', 'UCIkKh1bq5mLj23f2m3BWUmQ', 'UCZGNLDywn8hgzqrC9Mlz_Pw', 'UCuby6A8tCXYkm-JCUE7yybA']
+code = """<div class="pure-u-1 pure-u-md-1-4">
+    <div class="h-box">
+        
+        
+            
+                <a style="width:100%" href="/watch?v=yGxCQisOL1A">
+                    <div class="thumbnail">
+                        <img class="thumbnail" src="/vi/yGxCQisOL1A/mqdefault.jpg">
+                        
 
-for i in enumerate(channelsIds):
-    print('https://www.youtube.com/feeds/videos.xml?channel_id=%s' % i[1])
+                        
+                            <p class="length">4:24</p>
+                        
+                    </div>
+                </a>
+            
+            <p><a href="/watch?v=yGxCQisOL1A">How to Set JAVA_HOME Environment Variable and Java Path on Windows 10</a></p>
+            <p>
+                <b>
+                    <a style="width:100%" href="/channel/UC1Be9fnFTlcsUlejgfqag0g">Java Guides</a>
+                </b>
+            </p>
+
+            <h5 class="pure-g">
+                
+                    <div class="pure-u-2-3">Shared 11 months ago</div>
+                
+
+                <div class="pure-u-1-3" style="text-align:right">
+                    4.4K views
+                </div>
+            </h5>
+        
+    </div>
+</div>"""
+
+from bs4 import BeautifulSoup as Soup
+
+soup = Soup(code, 'lxml')
+text = soup.text
+videoData = []  # [length, title, channel, upload date, views]
+for i in text.splitlines():
+    i = i.strip()
+    if len(i) != 0:
+        videoData.append(i)
+print(videoData)
+print(soup.a.get('href'))

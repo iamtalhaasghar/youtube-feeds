@@ -4,7 +4,7 @@ class YoutubeChannelBot:
         self.channelId = channelId
         self.channelName = ""
 
-    def __openChannelPage(self):
+    def __getFirefoxDriver(self):
         from selenium import webdriver
         from selenium.webdriver.firefox.options import Options
         options = Options()
@@ -28,7 +28,7 @@ class YoutubeChannelBot:
         return videoList
 
     def scrap(self):
-        browser = self.__openChannelPage()
+        browser = self.__getFirefoxDriver()
         channelUrl = 'https://www.youtube.com/channel/%s/videos' % self.channelId
         browser.get(channelUrl)
         self.channelName = browser.find_element_by_id('channel-name').text
@@ -38,7 +38,7 @@ class YoutubeChannelBot:
 
 if __name__ == "__main__":
     import sys
-    if(len(sys.argv) > 1):
+    if len(sys.argv) > 2:
         channelIds = sys.argv[1:]
         for channel in channelIds:
             ytChannel = YoutubeChannelBot(channel)
