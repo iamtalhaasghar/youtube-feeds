@@ -17,12 +17,13 @@ class InvidiousBot:
         from bs4 import BeautifulSoup as Soup
         from datetime import date
         browser = self.__getFirefoxDriver()
-        channelUrl = 'https://vid.mint.lgbt/channel/%s' % channelId
+        channelUrl = 'https://invidious.snopyta.org/channel/%s' % channelId
         isThereNextPage = True
         alreadyScraped = False
         pageNumber = 1
         scrapedVideos = list()
         while not alreadyScraped and isThereNextPage:
+            print(channelUrl, pageNumber)
             browser.get('%s?page=%d' % (channelUrl, pageNumber))
             videoDivs = browser.find_elements_by_xpath('//h5/parent::div')
             index = 0
@@ -34,12 +35,13 @@ class InvidiousBot:
                 text = soup.text
                 href = soup.a.get('href')
                 videoId = href.split('=')[1]
-                tempData = []  # [length, title, channel, date, views]
+                tempData = list()  # [length, title, channel, date, views]
                 for i in text.splitlines():
                     i = i.strip()
                     if len(i) != 0:
                         tempData.append(i)
-
+                if('Premieres' in tempData[2]):
+                    tempData.insert(0,'00:00')
                 videoData = {
                     'length': tempData[0],
                     'title': tempData[1],
@@ -53,6 +55,7 @@ class InvidiousBot:
                 print(videoData)
                 if alreadyScrapedVideoList is not None and videoData['video_id'] in alreadyScrapedVideoList:
                     alreadyScraped = True
+                    print('Already Scraped')
                 else:
                     scrapedVideos.append(videoData)
 
@@ -62,6 +65,7 @@ class InvidiousBot:
                     pageNumber += 1
                 except Exception as ex:
                     isThereNextPage = False
+                    print(ex)
         browser.close()
         return scrapedVideos
 
@@ -74,7 +78,7 @@ if __name__ == "__main__":
     import sys
     from database import Database
 
-    db = Database()
+    db = Database(2)
     allChannels = db.getChannels()
     allChannels = [i['channel_id'] for i in allChannels]
     if len(sys.argv) > 1:
@@ -83,11 +87,33 @@ if __name__ == "__main__":
         channelIds = allChannels
 
     for channel in channelIds:
-        print(channel)
-        videos = db.getAllVideosOfChannel(channel)
-        videos = [i['video_id'] for i in videos]
-        ytChannel = InvidiousBot()
-        videos = ytChannel.scrapVideosOfChannel(channel, videos)
-        db.insertData(videos)
+        print('Scraping: ', channel)
+        #videos = db.getAllVideosOfChannel(channel)
+        #videos = [i['video_id'] for i in videos]
+        #db.insertData(videos)        
+        filePath = '/mnt/78464AB8464A76C2/QuiteHtmls/%s.html' % db.getChannelName(channel)
+        import os
+        if not os.path.exists(filePath):
+            ytChannel = InvidiousBot()        
+            videos = ytChannel.scrapVideosOfChannel(channel)        
+            f = open(filePath, 'w', encoding='utf-8')
+            f.write('<ol>\n')
+            for i in videos:
+                f.write('<li><a href="https://www.youtube.com/watch?v=%s">%s</a></li>\n' % (i['video_id'], i['title']))
+            f.write('</ol>')
+            f.close()
+        
 
+
+
+
+
+
+
+
+
+
+
+        
+        
 

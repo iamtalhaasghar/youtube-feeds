@@ -1,6 +1,10 @@
 class Database:
-    def __init__(self):
-        self.databasePath = '/mnt/78464AB8464A76C2/DataBackups/invidious'
+    def __init__(self, version):
+
+        if int(version) == 1:
+            self.databasePath = '/mnt/78464AB8464A76C2/DataBackups/invidious'
+        elif int(version) == 2:
+            self.databasePath = '/mnt/78464AB8464A76C2/DataBackups/ytfeeds'
 
     def insertData(self, videoDetails):
         import sqlite3 as sql
